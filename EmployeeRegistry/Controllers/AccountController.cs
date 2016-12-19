@@ -17,9 +17,15 @@ namespace EmployeeRegistry.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        //Begin - New content added to display user name - identity/role functionality
+        ApplicationDbContext context;
+        //END - New content added to display user name - identity/role functionality
 
         public AccountController()
         {
+            //BEGIN - New content added to display user name - identity/role functionality
+            context = new ApplicationDbContext();
+            //END - New content added to display user name - identity/role functionality
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -133,6 +139,10 @@ namespace EmployeeRegistry.Controllers
                     return View(model);
             }
         }
+
+        
+
+
 
         //
         // GET: /Account/Register
